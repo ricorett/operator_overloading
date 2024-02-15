@@ -16,19 +16,19 @@ public:
     bool operator==(Fraction &f){
         return((double)(this->numerator_ / this->denominator_) == (double)(f.numerator_ / f.denominator_)) ? true : false;
     }
-    bool operator!=(Fraction &f){
-        return((double)(this->numerator_ / this->denominator_) != (double)(f.numerator_ / f.denominator_)) ? true : false;
+    bool operator!=(Fraction &f) {
+        return !(*this == f);
     }
     bool operator<(Fraction &f){
         return((double)(this->numerator_ / this->denominator_) < (double)(f.numerator_ / f.denominator_)) ? true : false;
     }
      bool operator>(Fraction &f){
-        return((double)(this->numerator_ / this->denominator_) > (double)(f.numerator_ / f.denominator_)) ? true : false;
+        return !(*this < f);
     }
      bool operator<=(Fraction &f){
         return((double)(this->numerator_ / this->denominator_) <= (double)(f.numerator_ / f.denominator_)) ? true : false;
     }
      bool operator>=(Fraction &f){
-        return((double)(this->numerator_ / this->denominator_) >= (double)(f.numerator_ / f.denominator_)) ? true : false;
+        return !(*this <= f);
     }
 };

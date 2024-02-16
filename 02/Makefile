@@ -1,7 +1,7 @@
 all: build
 
-build: main.cpp
-	g++ -std=c++2b main.cpp
+build: main.cpp Fraction.cpp
+	g++ -std=c++2b *.cpp
 
 
 clean:

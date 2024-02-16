@@ -10,13 +10,14 @@ Fraction::Fraction(int numerator, int denominator) : numerator_(numerator), deno
 	}
 
     void Fraction::display() const {
-        std::cout << numerator_ << "/" << denominator_;
+        std::cout << numerator_;
+        if (numerator_ != 0) std::cout << "/" << denominator_;
     }
     void Fraction::simplify() {
         int commonDenominator = gcd(numerator_, denominator_);
         numerator_ /= commonDenominator;
         denominator_ /= commonDenominator;
-        std::cout << numerator_ << "/" << denominator_;
-
+        std::cout << numerator_ ;
+        if (numerator_ != 0) std::cout << "/" << denominator_;
     }
 

@@ -1,4 +1,5 @@
 #include "fraction.h"
+#include <ostream>
 
 int main(){
     int num1 = 0, num2 = 0, dem1 = 0, dem2 = 0;
@@ -55,35 +56,33 @@ int main(){
         divFraction.simplify();
         std::cout << std::endl;  
         
-        Fraction unarPlus = ++f1;
-        multFraction = unarPlus * f1;
-        
-        std::cout << "++";
+
+               std::cout << "++";
         f1.display();
-        std::cout << " * "; 
+        Fraction increment = ++f1;
+        multFraction = increment * f2;
+
+        std::cout << " * ";
         f2.display();
-        std::cout  << " = "; 
-
-
+        std::cout << " = ";
         multFraction.simplify();
-        std::cout << std::endl; 
-        std::cout << "Значение дроби 1 = " ;
-        unarPlus.simplify();
         std::cout << std::endl;
-        
-        Fraction unarMinus = f1--;
-        multFraction = unarMinus * f1;
-        
+
+
+        std::cout << "Значение дроби 1 = ";
         f1.display();
+        std::cout << std::endl;
+
+        f1.display();
+        Fraction decrement = f1--;
+        multFraction = decrement * f2;        
         std::cout << "-- * ";
         f2.display();
         std::cout  << " = "; 
-
-
         multFraction.simplify();
         std::cout << std::endl;
         std::cout << "Значение дроби 1 = ";
-        unarMinus.simplify();
+        f1.display();
         std::cout << std::endl;
 
     } catch (const std::invalid_argument& e) {
@@ -91,4 +90,3 @@ int main(){
     }
     return 0;
 }
-

@@ -1,15 +1,17 @@
+#pragma once
 #include <iostream>
 #include <stdexcept>
 
 class Fraction
 {
 private:
-	int numerator_;
-	int denominator_;
+	int numerator_; // числитель
+	int denominator_; // знаменатель
     
 
 public:
 	Fraction(int numerator, int denominator);
+    Fraction(const Fraction &f) { numerator_ = f.numerator_; denominator_ = f.denominator_; }
      void display() const;
      void simplify();
 
@@ -54,7 +56,7 @@ public:
 
         return Fraction(resultNumerator, resultDenominator);
     }
-    Fraction operator++(){
+    Fraction& operator++(){
         numerator_ += denominator_;
         return *this;
     }
@@ -63,3 +65,4 @@ public:
         return *this;
     }
 };
+

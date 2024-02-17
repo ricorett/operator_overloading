@@ -64,5 +64,14 @@ public:
         numerator_ -= denominator_;
         return *this;
     }
+       Fraction& operator--(){
+        numerator_ += denominator_;
+        return *this;
+    }
+    Fraction operator++(int){
+        numerator_ -= denominator_;
+        return *this;
+    }
+    
 };
 

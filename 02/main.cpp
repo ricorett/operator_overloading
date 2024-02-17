@@ -74,8 +74,7 @@ int main(){
         std::cout << std::endl;
 
         f1.display();
-        Fraction decrement = f1--;
-        multFraction = decrement * f2;        
+        multFraction = f1-- * f2;        
         std::cout << "-- * ";
         f2.display();
         std::cout  << " = "; 

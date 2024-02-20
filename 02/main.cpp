@@ -1,5 +1,5 @@
 #include "fraction.h"
-#include <ostream>
+#include <iostream>
 
 int main(){
     int num1 = 0, num2 = 0, dem1 = 0, dem2 = 0;
@@ -74,7 +74,7 @@ int main(){
         std::cout << std::endl;
 
         f1.display();
-        multFraction = f1-- * f2;        
+        multFraction = f1-- * f2;
         std::cout << "-- * ";
         f2.display();
         std::cout  << " = "; 

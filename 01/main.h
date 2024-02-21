@@ -12,23 +12,30 @@ public:
 		numerator_ = numerator;
 		denominator_ = denominator;
 	}
-    
-    bool operator==(Fraction &f){
-        return((double)(this->numerator_ / this->denominator_) == (double)(f.numerator_ / f.denominator_)) ? true : false;
+
+
+    bool operator==(const Fraction &f) const {
+        return (this->numerator_ * f.denominator_ == f.numerator_ * this->denominator_);
     }
-    bool operator!=(Fraction &f) {
+
+    bool operator!=(const Fraction &f) const {
         return !(*this == f);
     }
-    bool operator<(Fraction &f){
-        return((double)(this->numerator_ / this->denominator_) < (double)(f.numerator_ / f.denominator_)) ? true : false;
+
+    bool operator<(const Fraction &f) const {
+        return (this->numerator_ * f.denominator_ < f.numerator_ * this->denominator_);
     }
-     bool operator>(Fraction &f){
-        return !(*this < f);
+
+    bool operator>(const Fraction &f) const {
+        return (this->numerator_ * f.denominator_ > f.numerator_ * this->denominator_);
     }
-     bool operator<=(Fraction &f){
-        return((double)(this->numerator_ / this->denominator_) <= (double)(f.numerator_ / f.denominator_)) ? true : false;
+
+    bool operator<=(const Fraction &f) const {
+        return (this->numerator_ * f.denominator_ <= f.numerator_ * this->denominator_);
     }
-     bool operator>=(Fraction &f){
-        return !(*this <= f);
+
+    bool operator>=(const Fraction &f) const {
+        return (this->numerator_ * f.denominator_ >= f.numerator_ * this->denominator_);
     }
+
 };
